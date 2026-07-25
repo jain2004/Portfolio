@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Doe | Staff Software Engineer & Designer",
-  description: "Portfolio of John Doe, a Staff Software Engineer & Creative Director specializing in high-performance web experiences.",
+  title: "Ishaan Jain | Software Engineer",
+  description: "Portfolio of Ishaan Jain, a Software Engineer focused on building intelligent, scalable systems.",
   openGraph: {
-    title: "John Doe | Engineer & Designer",
-    description: "Portfolio of John Doe, specializing in high-performance web experiences.",
-    url: "https://example.com",
-    siteName: "John Doe Portfolio",
+    title: "Ishaan Jain | Software Engineer",
+    description: "Portfolio of Ishaan Jain, a Software Engineer focused on building intelligent, scalable systems.",
+    url: "https://jain2004.github.io/Portfolio",
+    siteName: "Ishaan Jain Portfolio",
     locale: "en_US",
     type: "website",
   },
