@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F7F7F2;
+  --color-charcoal: #0F0F0F;
+  --color-offwhite: #EBEBE6;
+  --color-accent: #E63946;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  /* Default light theme */
+  --bg-color: var(--color-cream);
+  --text-color: var(--color-charcoal);
+  --border-color: rgba(15, 15, 15, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* We will toggle this class on the body or wrapper via GSAP to shift environments */
+body.dark-mode {
+  --bg-color: var(--color-charcoal);
+  --text-color: var(--color-cream);
+  --border-color: rgba(247, 247, 242, 0.1);
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 0px; /* Hide scrollbar for immersive feel */
+}
+
+.clip-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.split-line {
+  overflow: hidden;
+}
