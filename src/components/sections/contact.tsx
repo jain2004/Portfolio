@@ -54,38 +54,53 @@ export function Contact() {
           End of Journey
         </span>
         
-        <button 
-          onClick={() => {
-            navigator.clipboard.writeText("ishaanj42@gmail.com");
-            const el = document.getElementById("copy-toast");
-            if (el) {
-              el.style.opacity = "1";
-              el.style.transform = "translate(-50%, -50%) scale(1)";
-              setTimeout(() => {
-                el.style.opacity = "0";
-                el.style.transform = "translate(-50%, -50%) scale(0.9)";
-              }, 2000);
-            }
-          }}
-          className="group inline-block mb-32 relative"
+        <a 
+          href={`mailto:${RESUME_DATA.contact.email}`}
+          className="group inline-block mb-32"
         >
           <h2 ref={textRef} className="text-[12vw] md:text-[10rem] font-medium tracking-tighter leading-none text-white transition-opacity duration-300 group-hover:opacity-70">
             Let's Talk.
           </h2>
+        </a>
+
+        <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-12 gap-8 relative">
           
           <div 
-            id="copy-toast"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black px-6 py-3 rounded-full font-mono text-sm tracking-widest uppercase shadow-xl opacity-0 scale-90 transition-all duration-300 pointer-events-none z-20 whitespace-nowrap"
+            id="footer-copy-toast"
+            className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[150%] bg-white text-black px-4 py-2 rounded-full font-mono text-xs tracking-widest uppercase shadow-xl opacity-0 scale-90 transition-all duration-300 pointer-events-none z-20 whitespace-nowrap"
           >
             Email Copied!
           </div>
-        </button>
 
-        <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-12 gap-8">
-          
           <div className="flex items-center gap-8">
-            {Object.entries(RESUME_DATA.contact).map(([platform, link]) => (
-              platform !== 'phone' && (
+            {Object.entries(RESUME_DATA.contact).map(([platform, link]) => {
+              if (platform === 'phone') return null;
+
+              if (platform === 'email') {
+                return (
+                  <button 
+                    key={platform}
+                    onClick={() => {
+                      navigator.clipboard.writeText("ishaanj42@gmail.com");
+                      const el = document.getElementById("footer-copy-toast");
+                      if (el) {
+                        el.style.opacity = "1";
+                        el.style.transform = "translate(-50%, -150%) scale(1)";
+                        setTimeout(() => {
+                          el.style.opacity = "0";
+                          el.style.transform = "translate(-50%, -150%) scale(0.9)";
+                        }, 2000);
+                      }
+                    }}
+                    className="flex items-center gap-1 text-sm md:text-base text-white/60 hover:text-white transition-colors uppercase tracking-widest font-mono group"
+                  >
+                    {platform}
+                    <FiArrowUpRight className="opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+                  </button>
+                );
+              }
+
+              return (
                 <a 
                   key={platform}
                   href={link}
@@ -96,8 +111,8 @@ export function Contact() {
                   {platform}
                   <FiArrowUpRight className="opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
                 </a>
-              )
-            ))}
+              );
+            })}
           </div>
           
           <div className="text-xs font-mono text-white/40 uppercase tracking-widest text-center md:text-right">

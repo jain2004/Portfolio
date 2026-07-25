@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import kayoImg from "../../../../public/images/kayo.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -98,10 +99,8 @@ export function KayoSection() {
           <div className="relative w-full overflow-hidden bg-white">
             <div ref={imageContainer} className="relative w-full origin-top">
               <Image
-                src="/images/kayo.png"
+                src={kayoImg}
                 alt="Kayo.one website screenshot"
-                width={1920}
-                height={1080}
                 className="w-full h-auto block object-cover object-top"
                 priority
               />
