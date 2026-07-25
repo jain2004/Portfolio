@@ -15,8 +15,11 @@ export function PageWrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!containerRef.current) return;
     
-    // Force scroll to top on reload
+    // Force scroll to top and remove hash on reload
     window.history.scrollRestoration = 'manual';
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
     window.scrollTo(0, 0);
 
     // Find all sections that declare a theme
