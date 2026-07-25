@@ -15,7 +15,7 @@ export function Experience() {
   const timeContainer = useRef<HTMLDivElement>(null);
   const hourText = useRef<HTMLSpanElement>(null);
   const secText = useRef<HTMLSpanElement>(null);
-  const accuracyText = useRef<HTMLSpanElement>(null);
+  const accuracyText = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     // F5 Pinned Animation Sequence

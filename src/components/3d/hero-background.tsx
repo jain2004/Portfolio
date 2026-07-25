@@ -59,8 +59,8 @@ function DataNetwork() {
     <group rotation={[Math.PI / 6, Math.PI / 4, 0]}>
       <lineSegments ref={linesRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={positions.length / 3} array={positions} itemSize={3} />
-          <bufferAttribute attach="attributes-color" count={colors.length / 4} array={colors} itemSize={4} />
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+          <bufferAttribute attach="attributes-color" args={[colors, 4]} />
         </bufferGeometry>
         <lineBasicMaterial vertexColors transparent depthWrite={false} linewidth={1} />
       </lineSegments>
