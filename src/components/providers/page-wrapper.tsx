@@ -16,11 +16,20 @@ export function PageWrapper({ children }: { children: React.ReactNode }) {
     if (!containerRef.current) return;
     
     // Force scroll to top and remove hash on reload
-    window.history.scrollRestoration = 'manual';
-    if (window.location.hash) {
-      window.history.replaceState(null, '', window.location.pathname);
+    if (typeof window !== 'undefined') {
+      window.history.scrollRestoration = 'manual';
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+      
+      // Aggressively force scroll to top to beat Next.js/Lenis restoration
+      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 50);
     }
-    window.scrollTo(0, 0);
 
     // Find all sections that declare a theme
     const sections = gsap.utils.toArray<HTMLElement>("[data-theme]");
