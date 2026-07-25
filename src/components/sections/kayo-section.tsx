@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import kayoImg from "../../../../public/images/kayo.png";
+import kayoImg from "../../../public/images/kayo.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
