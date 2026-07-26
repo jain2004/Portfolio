@@ -13,8 +13,8 @@ export function Experience() {
   const container = useRef<HTMLElement>(null);
   const f5Section = useRef<HTMLDivElement>(null);
   const timeContainer = useRef<HTMLDivElement>(null);
-  const hourText = useRef<HTMLSpanElement>(null);
-  const secText = useRef<HTMLSpanElement>(null);
+  const hourText = useRef<HTMLDivElement>(null);
+  const secText = useRef<HTMLDivElement>(null);
   const accuracyText = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -70,13 +70,19 @@ export function Experience() {
         {/* Massive Animated Text Container */}
         <div ref={timeContainer} className="relative w-full h-[50vh] flex items-center justify-center">
           
-          <span ref={hourText} className="absolute text-[15vw] md:text-[12rem] font-medium tracking-tighter leading-none text-white whitespace-nowrap">
-            3 HOURS
-          </span>
+          <div ref={hourText} className="absolute flex flex-col items-center">
+            <span className="text-xl md:text-3xl font-light text-white/50 tracking-widest uppercase mb-4">From</span>
+            <span className="text-[15vw] md:text-[12rem] font-medium tracking-tighter leading-none text-white whitespace-nowrap">
+              3 HOURS
+            </span>
+          </div>
           
-          <span ref={secText} className="absolute text-[12vw] md:text-[10rem] font-medium tracking-tighter leading-none text-[#E63946] whitespace-nowrap hidden">
-            &lt; 30 SECONDS
-          </span>
+          <div ref={secText} className="absolute flex flex-col items-center hidden">
+            <span className="text-xl md:text-3xl font-light text-[#E63946]/70 tracking-widest uppercase mb-4">Down To</span>
+            <span className="text-[10vw] md:text-[9rem] font-medium tracking-tighter leading-none text-[#E63946] whitespace-nowrap">
+              &lt; 30 SECONDS
+            </span>
+          </div>
 
           <div ref={accuracyText} className="absolute flex flex-col items-center text-center px-4">
             <span className="text-6xl md:text-8xl font-bold tracking-tight text-white mb-6">
