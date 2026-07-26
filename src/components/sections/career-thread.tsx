@@ -10,7 +10,7 @@ if (typeof window !== "undefined") {
 }
 
 const MILESTONES = [
-  { year: "2021", label: "Seattle University", sub: "Began studying Computer Science" },
+  { year: "2022", label: "Seattle University", sub: "Began studying Computer Science" },
   { year: "2024", label: "F5", sub: "Built AI-powered developer tooling" },
   { year: "2025", label: "Graduation", sub: "B.S. Computer Science" },
   { year: "2025", label: "Kayo.one", sub: "Shipped production software" },

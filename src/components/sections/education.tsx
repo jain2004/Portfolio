@@ -85,7 +85,7 @@ export function Education() {
         ref={undergrad}
         className="absolute left-[8%] md:left-[15%] top-1/2 -translate-y-1/2"
       >
-        <p className="text-xs font-mono uppercase tracking-widest text-white/30 mb-4">2021 – 2025</p>
+        <p className="text-xs font-mono uppercase tracking-widest text-white/30 mb-4">2022 – 2025</p>
         <h3 className="text-3xl md:text-5xl font-medium tracking-tighter text-white mb-3">
           Seattle University
         </h3>
