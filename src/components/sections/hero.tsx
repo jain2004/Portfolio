@@ -58,7 +58,7 @@ export function Hero() {
              <p className="text-sm font-medium uppercase tracking-widest text-black/80">Ishaan Jain — Seattle, WA</p>
           </div>
           <p ref={subtext} className="text-lg md:text-2xl text-black/80 font-light max-w-md leading-relaxed text-right">
-            I am a software engineer focused on building intelligent, scalable systems. Currently pursuing my M.S. in Computer Science at Georgia Tech.
+            Software engineer focused on building intelligent, scalable systems. Currently pursuing my M.S. in Computer Science at Georgia Tech.
           </p>
         </div>
 
