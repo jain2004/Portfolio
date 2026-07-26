@@ -63,15 +63,8 @@ export function Contact() {
           </h2>
         </a>
 
-        <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-12 gap-8 relative">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-12 gap-8">
           
-          <div 
-            id="footer-copy-toast"
-            className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[150%] bg-white text-black px-4 py-2 rounded-full font-mono text-xs tracking-widest uppercase shadow-xl opacity-0 scale-90 transition-all duration-300 pointer-events-none z-20 whitespace-nowrap"
-          >
-            Email Copied!
-          </div>
-
           <div className="flex items-center gap-8">
             {Object.entries(RESUME_DATA.contact).map(([platform, link]) => {
               if (platform === 'phone') return null;
@@ -92,10 +85,17 @@ export function Contact() {
                         }, 2000);
                       }
                     }}
-                    className="flex items-center gap-1 text-sm md:text-base text-white/60 hover:text-white transition-colors uppercase tracking-widest font-mono group"
+                    className="relative flex items-center gap-1 text-sm md:text-base text-white/60 hover:text-white transition-colors uppercase tracking-widest font-mono group"
                   >
                     {platform}
                     <FiArrowUpRight className="opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+                    
+                    <div 
+                      id="footer-copy-toast"
+                      className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[150%] bg-white text-black px-3 py-1.5 rounded-full font-mono text-[10px] tracking-widest uppercase shadow-xl opacity-0 scale-90 transition-all duration-300 pointer-events-none z-20 whitespace-nowrap"
+                    >
+                      Copied!
+                    </div>
                   </button>
                 );
               }
