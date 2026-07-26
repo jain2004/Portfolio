@@ -78,24 +78,17 @@ export function Contact() {
                       const el = document.getElementById("footer-copy-toast");
                       if (el) {
                         el.style.opacity = "1";
-                        el.style.transform = "translate(-50%, -150%) scale(1)";
+                        el.style.transform = "translate(-50%, 0) scale(1)";
                         setTimeout(() => {
                           el.style.opacity = "0";
-                          el.style.transform = "translate(-50%, -150%) scale(0.9)";
+                          el.style.transform = "translate(-50%, -20px) scale(0.9)";
                         }, 2000);
                       }
                     }}
-                    className="relative flex items-center gap-1 text-sm md:text-base text-white/60 hover:text-white transition-colors uppercase tracking-widest font-mono group"
+                    className="flex items-center gap-1 text-sm md:text-base text-white/60 hover:text-white transition-colors uppercase tracking-widest font-mono group"
                   >
                     {platform}
                     <FiArrowUpRight className="opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
-                    
-                    <div 
-                      id="footer-copy-toast"
-                      className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[150%] bg-white text-black px-3 py-1.5 rounded-full font-mono text-[10px] tracking-widest uppercase shadow-xl opacity-0 scale-90 transition-all duration-300 pointer-events-none z-20 whitespace-nowrap"
-                    >
-                      Copied!
-                    </div>
                   </button>
                 );
               }
@@ -122,6 +115,14 @@ export function Contact() {
           </div>
 
         </div>
+      </div>
+
+      <div 
+        id="footer-copy-toast"
+        className="fixed top-8 left-1/2 bg-white text-black px-6 py-3 rounded-full font-mono text-sm tracking-widest uppercase shadow-2xl opacity-0 transition-all duration-300 pointer-events-none z-[100] whitespace-nowrap"
+        style={{ transform: 'translate(-50%, -20px) scale(0.9)' }}
+      >
+        Email Copied!
       </div>
 
     </footer>
